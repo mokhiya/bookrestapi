@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 
 from app.models import create_tables
-from app.routers import authors
+from app.routers import authors, books
 
 app = FastAPI()
 
@@ -14,3 +14,4 @@ async def root():
 
 
 app.include_router(authors.router)
+app.include_router(books.router)
