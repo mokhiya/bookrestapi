@@ -39,6 +39,7 @@ class Users(SQLModel, table=True):
     first_name: str = Field(min_length=3, max_length=50)
     last_name: str = Field(min_length=3, max_length=50)
     age: int | None = Field(default=None, gt=0)
+    is_active: bool = Field(default=False)
     created_date: datetime | None = Field(default=datetime.now(timezone.utc))
 
 def create_tables():
