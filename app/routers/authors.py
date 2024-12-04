@@ -1,11 +1,11 @@
 from urllib import request
 
-from fastapi import APIRouter, HTTPException, Request
+from fastapi import APIRouter, HTTPException
 from sqlmodel import select
 
-from app.database import SessionDeb
-from app.models import Authors
-from app.schemas import AuthorIn
+from app.cores.database import SessionDeb
+from app.cores.models import Authors
+from app.schemas.schemas import AuthorIn
 
 router = APIRouter(
     tags=['Authors'],

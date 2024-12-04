@@ -29,3 +29,23 @@ class BookOut(BaseModel):
     genre: str | None = Field(default=None, max_length=50)
     publication_year: int | None = Field(default=None)
     author_id: int
+
+
+class UserIn(BaseModel):
+    first_name: str = Field(min_length=3, max_length=50)
+    last_name: str = Field(min_length=3, max_length=50)
+    date_of_birth: int | None = Field(default=None)
+    email: str = Field(min_length=7, max_length=50)
+    password: str = Field(min_length=8, max_length=50)
+    confirm_password: str = Field(min_length=8, max_length=50)
+    username: str = Field(min_length=7, max_length=50)
+
+
+class UserOut(BaseModel):
+    id: int
+    first_name: str = Field(min_length=3, max_length=50)
+    last_name: str = Field(min_length=3, max_length=50)
+    date_of_birth: int | None = Field(default=None)
+    email: str = Field(min_length=7, max_length=50)
+    password: str = Field(min_length=8, max_length=50)
+    username: str = Field(min_length=7, max_length=50)

@@ -1,9 +1,9 @@
 from fastapi import APIRouter, HTTPException, Depends, Request
 from sqlalchemy.orm import Session
 from sqlalchemy import select
-from app.models import Books, Authors
-from app.database import get_session
-from app.schemas import BookIn, BookOut
+from app.cores.models import Books, Authors
+from app.cores.database import get_session
+from app.schemas.schemas import BookIn, BookOut
 
 router = APIRouter(
     tags=['Books'],
